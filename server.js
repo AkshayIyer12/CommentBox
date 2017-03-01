@@ -4,12 +4,18 @@
 var express = require(‘express’);
 var mongoose = require(‘mongoose’);
 var bodyParser = require(‘body-parser’);
+var Comment = require(‘./model/comments’);
+
 //and create our instances
 var app = express();
 var router = express.Router();
 //set our port to either a predetermined port number if you have set 
 //it up, or 3001
 var port = process.env.API_PORT || 3001;
+//db config
+//Integrating the database MongoDB from Amazon AWS using MLab( database as a service provider) using a driver via
+// the Standard MongoDB URI
+mongoose.connect('mongodb://darkJedi:mongorun121@ds111940.mlab.com:11940/merncommentbox')
 //now we should configure the API to use bodyParser and look for 
 //JSON data in the request body
 app.use(bodyParser.urlencoded({ extended: true }));
