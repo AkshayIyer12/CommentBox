@@ -11,7 +11,7 @@ class CommentList extends Component {
 				<Comment author={ comment.author } key={ comment.id }>
 				{	comment.text }
 				</Comment>
-			)
+			);
 		})
 
 		return (
@@ -20,7 +20,7 @@ class CommentList extends Component {
 				{ commentNodes }
 			</div>
 
-		)
+		);
 
 	}
 }
